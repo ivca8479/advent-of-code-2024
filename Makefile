@@ -1,6 +1,6 @@
 CXX = g++
-TARGET = parse_columns.exe
-SRCS = day_one.cpp libraries/string_helpers.cpp libraries/array_helpers.cpp 
+TARGET = day_two.exe
+SRCS = day_two.cpp libraries/string_helpers.cpp libraries/array_helpers.cpp 
 
 all:
 	$(CXX) $(SRCS) -o $(TARGET)
