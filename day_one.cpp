@@ -28,13 +28,23 @@ int main()
     for(int i = 0; i < length; i++)
     {
         int a = get_min(col_one, length);
-        std::cout << "a = " << a << std::endl;
         int b = get_min(col_two, length);
-        std::cout << "b = " << b << std::endl;
         int diff = a - b;
         diff = std::abs(diff);
         sum += diff;
     }
     std::cout << "The total difference = " << sum << std::endl;
+    //////////// Part 2 /////////////
+    get_numbers("text_files/column0.txt", col_one);
+    get_numbers("text_files/column1.txt", col_two);
+    int similarity_score = 0;
+    for(int i = 0; i < length; i++)
+    {
+        int num = col_one[i];
+        int count = find_count(col_two, num, length);
+        std::cout << "For the number " << num << " count = " << count << std::endl;
+        similarity_score += (num * count);
+    }
+    std::cout << "The similarity score is " << similarity_score << std::endl;
     return 0;
 }
